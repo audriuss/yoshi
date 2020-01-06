@@ -11,8 +11,6 @@
   "author": "Ran Yitzhaki",
   "license": "ISC",
   "dependencies": {
-    "@sentry/browser": "^5.9.1",
-    "@wix/fedops-logger": "^3.0.125",
     "@wix/native-components-infra": "^1.0.571",
     "@wix/wix-experiments": "^3.0.218",
     "lodash": "^4.17.15",
