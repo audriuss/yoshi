@@ -29,7 +29,7 @@ const PublicDataProvider: typeof React.Component =
     : PublicDataProviderEditor;
 
 const WidgetWrapper = (UserComponent: typeof React.Component) => (
-  props: IHostProps & IFrameworkProps,
+  props: IHostProps & IFrameworkProps & IControllerContext,
 ) => {
   return (
     <div>
@@ -42,7 +42,7 @@ const WidgetWrapper = (UserComponent: typeof React.Component) => (
       <ErrorBoundary handleException={error => console.log(error)}>
         <Suspense fallback={<div>Loading...</div>}>
           <PublicDataProvider data={props.__publicData__} Wix={window.Wix}>
-            <ControllerProvider data={(props as unknown) as IControllerContext}>
+            <ControllerProvider data={props}>
               <UserComponent
                 {...createInstances(props.experiments)}
                 {...props}
