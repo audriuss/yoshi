@@ -1,5 +1,5 @@
 import React from 'react';
-import { PublicData, Controller, Translation } from 'yoshi-flow-editor-runtime';
+import { PublicData, Controller } from 'yoshi-flow-editor-runtime';
 import styles from './styles.scss';
 
 const Todo = ({ onClick, completed, text }) => {
@@ -119,25 +119,18 @@ const AddTodo = () => {
 export default () => {
   return (
     <div className={styles.wrapper}>
-      <Translation>
-        {t => (
-          <PublicData>
-            {publicData => {
-              return (
-                <div>
-                  <h1>
-                    {t('app.hello')}
-                    {publicData.get('title')}
-                  </h1>
-                  <AddTodo />
-                  <TodoList />
-                  <Footer />
-                </div>
-              );
-            }}
-          </PublicData>
-        )}
-      </Translation>
+      <PublicData>
+        {publicData => {
+          return (
+            <div>
+              <h1>{publicData.get('title')}</h1>
+              <AddTodo />
+              <TodoList />
+              <Footer />
+            </div>
+          );
+        }}
+      </PublicData>
     </div>
   );
 };
