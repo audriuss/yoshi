@@ -7,13 +7,5 @@ export * from './react/PublicDataProviderEditor';
 export * from './react/PublicDataProviderViewer';
 export * from './react/PublicDataRenderProp';
 
-export * from './react/TranslationRenderProp';
-
-export * from './react/FedopsProvider';
-export * from './react/FedopsRenderProp';
-
-export * from './react/SentryProvider';
-export * from './react/SentryRenderProp';
-
 export * from './react/hooks';
 export * from './react/ErrorBoundary';
