@@ -56,7 +56,7 @@ export default class Settings extends React.Component {
         family: 'roboto-bold',
         fontStyleParam: true,
         preset: 'Custom',
-        size: fontSize,
+        size: Number(fontSize),
         style: { bold: false, italic: false, underline: false },
         value: `font:normal normal normal ${fontSize}px/1em roboto-bold,roboto,sans-serif;`,
       },

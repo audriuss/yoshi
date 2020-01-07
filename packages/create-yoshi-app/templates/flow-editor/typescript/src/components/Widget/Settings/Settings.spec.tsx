@@ -23,6 +23,7 @@ describe('Settings', () => {
   };
 
   window.Wix = {
+    // @ts-ignore we're only partially mocking Wix object
     Styles: {
       getStyleParams: (callback: Function) => callback(styleParams),
       setFontParam: () => {},

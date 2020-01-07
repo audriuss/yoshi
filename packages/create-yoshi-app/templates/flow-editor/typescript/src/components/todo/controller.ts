@@ -18,11 +18,8 @@ const createController = async function(
     widgetConfig: any;
   },
 ): Promise<{ methods?: any; corvid?: any; pageReady?: Function }> {
-  // const { id: userId } = controllerConfig.wixCodeApi.user.currentUser;
-
   // Load app data
   // const initialState = await loadState(userId);
-  // console.log({ initialState });
   const initialState = undefined;
 
   // Wait for framework data / setup data
