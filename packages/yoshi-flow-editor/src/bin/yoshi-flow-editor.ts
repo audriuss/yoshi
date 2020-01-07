@@ -6,17 +6,18 @@ process.on('unhandledRejection', error => {
 
 import arg from 'arg';
 import loadConfig from 'yoshi-config/loadConfig';
-import { Config } from 'yoshi-config/build/config';
 import normalizeDebuggingArgs from 'yoshi-common/normalize-debugging-args';
 import verifyDependencies from 'yoshi-common/verify-dependencies';
 import verifyNodeVersion from 'yoshi-common/verify-node-version';
 import { generateFlowEditorModel, FlowEditorModel } from '../model';
 
+export type FlowEditorConfig = { name: string };
+
 const defaultCommand = 'start';
 
 export type cliCommand = (
   argv: Array<string>,
-  config: Config,
+  config: FlowEditorConfig,
   model: FlowEditorModel,
 ) => Promise<void>;
 
@@ -92,15 +93,17 @@ Promise.resolve().then(async () => {
     process.env.BABEL_ENV = 'production';
   }
 
-  const config = loadConfig();
-  config.servers.cdn.ssl = true;
+  const originalConfig = loadConfig();
+  const flowEditorConfig: FlowEditorConfig = {
+    name: originalConfig.name,
+  };
 
-  const model = await generateFlowEditorModel(config);
+  const model = await generateFlowEditorModel(flowEditorConfig);
 
   const runCommand = (await commands[command]()).default;
 
   // legacy flow commands doen't need to be run
   if (typeof runCommand === 'function') {
-    await runCommand(forwardedArgs, config, model);
+    await runCommand(forwardedArgs, flowEditorConfig, model);
   }
 });
