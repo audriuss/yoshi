@@ -17,6 +17,8 @@
 
 ## Overview
 
+Take a look at the [RFC](https://github.com/wix/yoshi/issues/1489)
+
 **OOI app is constructed from 3 parts:**
 
 1. **Viewer App**
