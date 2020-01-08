@@ -13,6 +13,9 @@ module.exports = {
     command: 'node dist/server.js',
     port: 3100,
   },
+  specOptions: {
+    testURL: 'https://localhost:3100',
+  },
   // bootstrap: {
   //   setup: async ({ globalObject }) => {
   //     await emitConfigs();
