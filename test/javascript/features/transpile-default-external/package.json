@@ -1,0 +1,11 @@
+{
+  "name": "external-js",
+  "private": true,
+  "yoshi": {
+    "projectType": "app",
+    "externalUnprocessedModules": ["wix-style-react"]
+  },
+  "jest": {
+    "preset": "jest-yoshi-preset"
+  }
+}
