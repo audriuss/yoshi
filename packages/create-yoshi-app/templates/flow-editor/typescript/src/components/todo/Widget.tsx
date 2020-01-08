@@ -27,7 +27,7 @@ const Todo: FC<TodoProps> = ({ onClick, completed, text }) => {
   );
 };
 
-const getVisibleTodos = (todos: Array<TodoProps>, filter: string) => {
+const getVisibleTodos = (todos: TodoProps[], filter: string) => {
   switch (filter) {
     case 'SHOW_ALL':
       return todos;

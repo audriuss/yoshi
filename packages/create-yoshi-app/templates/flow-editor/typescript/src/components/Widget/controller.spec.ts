@@ -41,7 +41,7 @@ describe('createAppController', () => {
       },
     });
 
-    controller.pageReady();
+    await controller.pageReady();
 
     expect(setPropsSpy).toBeCalledWith({
       name: 'World',
